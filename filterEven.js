@@ -1,10 +1,18 @@
-function filterEvenNumbers(arr) {
-    const filteredArray = arr.filter((num) => num % 2 === 0);
-    return filteredArray;
+function generateMultiplicationTable(number) {
+    console.log(`Generate Multiplication Table for: ${number}`);
+  
+    for (let i = 1; i <= 10; i++) {
+      const result = number * i;
+      console.log(`${i} x ${number} = ${result}`);
+    }
   }
   
-  const originalArray = [12, 34, 45, 23, 6, 78, 54, 90];
-  const filteredEvenNumbers = filterEvenNumbers(originalArray);
+  // Taking input from the user
+  const userInput = prompt("Enter a number to generate its multiplication table:");
+  const number = parseInt(userInput);
   
-  console.log("Original Array: " + JSON.stringify(originalArray));
-  console.log("Filtered Even Numbers: " + JSON.stringify(filteredEvenNumbers));
+  if (isNaN(number)) {
+    console.log("Invalid input. Please enter a valid number.");
+  } else {
+    generateMultiplicationTable(number);
+  }
